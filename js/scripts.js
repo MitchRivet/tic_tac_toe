@@ -56,16 +56,60 @@ Space.prototype.marked_by = function() {
 
 };
 
-// function Board() {
-//
-// }
-//
-// function Game() {
-//
-// }
-//
-//
-// $(document).ready(function() {
-//
-//
-// });
+
+
+$(document).ready(function() {
+
+
+  var userprompt = prompt("Welcome to Tic Tac Toe! Would you like to be X or O?");
+  if (userprompt.toLowerCase() == "x") {
+    alert("You are player x!");
+      var inputtedMark = "X";
+  } else if (userprompt.toLowerCase() == "y") {
+    alert("You are player y!");
+    var inputtedMark = "Y";
+  } else {
+    prompt("Please enter an X or Y");
+  }
+
+  $(".hiddenDiv").show();
+
+
+  $(".one_one").click(function() {
+    $(this).text(inputtedMark);
+  });
+
+  $(".one_two").click(function() {
+    $(".one_two").text(inputtedMark);
+  });
+
+  $(".one_three").click(function() {
+    $(".one_three").text(inputtedMark);
+  });
+
+  $(".two_one").click(function() {
+    $(".two_one").text(inputtedMark);
+  });
+
+  $(".two_two").click(function() {
+    $(".two_two").text(inputtedMark);
+  });
+
+  $(".two_three").click(function() {
+    $(".two_three").text(inputtedMark);
+  });
+
+  $(".three_one").click(function() {
+    $(".three_one").text(inputtedMark);
+  });
+
+  $(".three_two").click(function() {
+    $(".three_two").text(inputtedMark);
+  });
+
+  $(".three_three").click(function() {
+    $(".three_three").text(inputtedMark);
+  });
+
+
+});
