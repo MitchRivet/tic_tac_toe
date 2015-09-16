@@ -32,19 +32,18 @@ Space.prototype.mark_by = function() {
   //
   // return marked[Space(Space.x_coordinate, Space.y_coordinate)];
 
-    var add = this.x_coordinate + this.y_coordinate;
-
-    console.log(add);
-
+    var mark = this.mark;
+    console.log(mark);
     var x = this.x_coordinate;
     var y = this.y_coordinate;
 
-    var coordinate = "(" + x + "," + y + ")";
-
-    console.log(coordinate);
-
-    spaceArray.splice(3, 1, "X");
-
+    if (this.y_coordinate == 2) {
+    spaceArray.splice((x + y), 1, "X");
+  } else if (this.y_coordinate == 1) {
+    spaceArray.splice((4 + x + y), 1, "X");
+  } else if (this.y_coordinate == 3) {
+    spaceArray.splice((x + y) - 4, 1, "X");
+  }
     console.log(spaceArray);
 };
 
@@ -64,5 +63,5 @@ Space.prototype.marked_by = function() {
 //
 // $(document).ready(function() {
 //
-// 
+//
 // });

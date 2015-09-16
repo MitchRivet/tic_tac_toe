@@ -22,6 +22,20 @@ describe('Space', function() {
       testSpace.mark_by();
       expect(testSpace.marked_by()).to.equal("X");
    });
+
+   it("lets a player mark a space in top row", function() {
+       var testPlayer = new Player("X");
+       var testSpace = new Space(1,3);
+       testSpace.mark_by();
+       expect(testSpace.marked_by()).to.equal("X");
+    });
+
+    it("lets a player mark a space in bottom row", function() {
+        var testPlayer = new Player("X");
+        var testSpace = new Space(1,1);
+        testSpace.mark_by();
+        expect(testSpace.marked_by()).to.equal("X");
+     });
 });
 
 // describe(Board) do
