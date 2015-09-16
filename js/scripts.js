@@ -28,12 +28,6 @@ Space.prototype.y_coordinate = function() {
 
 Space.prototype.mark_by = function() {
 
-  // var marked = {Player.mark:Space(Space.x_coordinate, Space.y_coordinate)};
-  //
-  // return marked[Space(Space.x_coordinate, Space.y_coordinate)];
-
-    var mark = this.mark;
-    console.log(mark);
     var x = this.x_coordinate;
     var y = this.y_coordinate;
 
@@ -49,7 +43,17 @@ Space.prototype.mark_by = function() {
 
 Space.prototype.marked_by = function() {
 
-  return spaceArray[3];
+  var x = this.x_coordinate;
+  var y = this.y_coordinate;
+  var add = x + y;
+  if (this.y_coordinate == 2) {
+    return spaceArray[add];
+} else if (this.y_coordinate == 1) {
+  return spaceArray[4 + add];
+} else if (this.y_coordinate == 3) {
+  return spaceArray[add - 4];
+}
+
 };
 
 // function Board() {
