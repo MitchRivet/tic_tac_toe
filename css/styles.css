@@ -4,8 +4,12 @@
 
 .row {
         border: 1px solid;
+        height: 50px;
       }
 
+.ticTacToe {
+        height: 50px;
+}
 
 .hiddenDiv {
   display: none;
