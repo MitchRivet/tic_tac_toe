@@ -1,64 +1,64 @@
-function Player(mark) {
-  this.mark = mark;
-};
-
-Player.prototype.mark = function() {
-
-  return this.mark;
-
-};
-
-var spaceArray = ["", "", "",
-                  "", "", "",
-                  "", "", ""];
-
-function Space(x_coordinate, y_coordinate) {
-  this.x_coordinate = x_coordinate;
-  this.y_coordinate = y_coordinate;
-}
-
-Space.prototype.x_coordinate = function() {
-  return this.x_coordinate;
-}
-
-Space.prototype.y_coordinate = function() {
-  return this.y_coordinate;
-}
-
-Space.prototype.mark_by = function() {
-
-    var x = this.x_coordinate;
-    var y = this.y_coordinate;
-
-    if (this.y_coordinate == 2) {
-    spaceArray.splice((x + y), 1, "X");
-  } else if (this.y_coordinate == 1) {
-    spaceArray.splice((4 + x + y), 1, "X");
-  } else if (this.y_coordinate == 3) {
-    spaceArray.splice((x + y) - 4, 1, "X");
-  }
-    console.log(spaceArray);
-};
-
-Space.prototype.marked_by = function() {
-
-  var x = this.x_coordinate;
-  var y = this.y_coordinate;
-  var add = x + y;
-  if (this.y_coordinate == 2) {
-    return spaceArray[add];
-} else if (this.y_coordinate == 1) {
-  return spaceArray[4 + add];
-} else if (this.y_coordinate == 3) {
-  return spaceArray[add - 4];
-}
-
-};
-
-
-
-
-
+// function Player(mark) {
+//   this.mark = mark;
+// };
+//
+// Player.prototype.mark = function() {
+//
+//   return this.mark;
+//
+// };
+//
+// var spaceArray = ["", "", "",
+//                   "", "", "",
+//                   "", "", ""];
+//
+// function Space(x_coordinate, y_coordinate) {
+//   this.x_coordinate = x_coordinate;
+//   this.y_coordinate = y_coordinate;
+// }
+//
+// Space.prototype.x_coordinate = function() {
+//   return this.x_coordinate;
+// }
+//
+// Space.prototype.y_coordinate = function() {
+//   return this.y_coordinate;
+// }
+//
+// Space.prototype.mark_by = function() {
+//
+//     var x = this.x_coordinate;
+//     var y = this.y_coordinate;
+//
+//     if (this.y_coordinate == 2) {
+//     spaceArray.splice((x + y), 1, "X");
+//   } else if (this.y_coordinate == 1) {
+//     spaceArray.splice((4 + x + y), 1, "X");
+//   } else if (this.y_coordinate == 3) {
+//     spaceArray.splice((x + y) - 4, 1, "X");
+//   }
+//     console.log(spaceArray);
+// };
+//
+// Space.prototype.marked_by = function() {
+//
+//   var x = this.x_coordinate;
+//   var y = this.y_coordinate;
+//   var add = x + y;
+//   if (this.y_coordinate == 2) {
+//     return spaceArray[add];
+// } else if (this.y_coordinate == 1) {
+//   return spaceArray[4 + add];
+// } else if (this.y_coordinate == 3) {
+//   return spaceArray[add - 4];
+// }
+//
+// };
+//
+//
+//
+//
+//
 
 $(document).ready(function() {
   $(".XObuttons").hide();
@@ -83,37 +83,26 @@ $(document).ready(function() {
 
   $("#O").click(function() {
     playerOneMark = "O";
-    playerTwoMark = "X"; 
+    playerTwoMark = "X";
     $(".XObuttons").hide();
     $(".hiddenDivGrid").show();
   });
-
-  // var userprompt = prompt("Welcome to Tic Tac Toe! This is a 2 Player game. Would you like to be X or O?");
-  //
-  //
-  // if (userprompt.toLowerCase() == "x") {
-  //   alert("Cool! You are X. You're buddy next to you is O (if you have a buddy...)");
-  //     var playerOneMark = "X";
-  //     var playerTwoMark = "O";
-  // } else if (userprompt.toLowerCase() == "o") {
-  //   alert("Cool! You are O. You're buddy next to you is X (if you have a buddy...)");
-  //   var playerTwoMark = "X";
-  //   var playerOneMark = "O";
-  // } else {
-  //   prompt("Please enter an X or O");
-  //
-  // }
-
-  // function setTurn() {
-  //   var r =
-  // }
-
-
 
   var counter = 0;
   $(".ticTacToe h1").click(function()
   {
     counter++;
+
+          if (counter == 9)
+          {
+            setTimeout(function()
+            {
+              alert("Tie! You're both losers");
+              location.reload();
+            }, 500);
+          }
+
+
           if (counter % 2 === 0)
           {
 
