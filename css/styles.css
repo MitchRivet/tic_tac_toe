@@ -3,12 +3,17 @@
 }*/
 
 .row {
-        border: 1px solid;
-        height: 50px;
-      }
+  border: 1px solid;
+  height: 200px;
+}
+
+.row h1 {
+  padding-top: 15%;
+}
 
 .ticTacToe {
-        height: 50px;
+  height: 200px;
+  /*width: 200px;*/
 }
 
 .hiddenDiv {
