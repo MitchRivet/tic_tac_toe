@@ -1,0 +1,40 @@
+/*#topRow {
+  background-color: red;
+}*/
+
+@font-face {
+  font-family: "Kevin";
+  src: url("Kevin Eleven.ttf");
+  format("truetype");
+}
+
+@font-face {
+  font-family: "button";
+  src: url("CFIDontWanttoGrowUp-Regular.ttf");
+  format("truetype");
+}
+
+.btn {
+  font-family: "button"; 
+}
+
+body {
+  font-family: "Kevin";
+}
+.row {
+  border: 1px solid;
+  height: 200px;
+}
+
+.row h1 {
+  padding-top: 15%;
+}
+
+.ticTacToe {
+  height: 200px;
+  /*width: 200px;*/
+}
+
+.hiddenDiv {
+  display: none;
+}
